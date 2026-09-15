@@ -1,3 +1,4 @@
+const API_URL = import.meta.env.VITE_API_URL || "";
 import { useState } from "react";
 import "./Auth.css";
 
@@ -32,8 +33,8 @@ function Auth({ onLogin }) {
     }
 
     const endpoint = isLogin
-      ? "http://localhost:5000/api/auth/login"
-      : "http://localhost:5000/api/auth/register";
+      ? `${API_URL}/api/auth/login`
+      : `${API_URL}/api/auth/register`;
 
     try {
       const response = await fetch(endpoint, {

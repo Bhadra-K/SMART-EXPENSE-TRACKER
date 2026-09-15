@@ -19,6 +19,7 @@ FROM nginx:alpine
 
 # Copy Vite build output to Nginx
 COPY --from=builder /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose frontend port
 EXPOSE 80
